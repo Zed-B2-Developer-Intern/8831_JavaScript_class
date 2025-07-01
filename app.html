@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      text-align: center;
+      background-color: #aecfec;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      
+    }
+    #quote {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #383636;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>How Are You Feeling Today?</h1>
+
+  <button onclick="showQuote('happy')">😊 Happy</button>
+  <button onclick="showQuote('sad')">😢 Sad</button>
+  <button onclick="showQuote('angry')">😠 Angry</button>
+  <button onclick="showQuote('tired')">😴 Tired</button>
+
+  <div id="quote"></div>
+<button onclick="showQuote()">Get Quote</button>
+<p id="quote"></p>
+
+<script>
+  const quotes = [
+    "Believe in yourself!",
+    "You are stronger than you think.",
+    "Stay positive, work hard.",
+    "Never give up."
+  ];
+
+  function showQuote() {
+    const i = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").textContent = quotes[i];
+  }
+</script>
+
+</body>
+</html>
