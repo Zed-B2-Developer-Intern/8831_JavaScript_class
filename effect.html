@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Effect</title>
+  <style>
+    body {
+      background: #222;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 24px;
+      padding: 50px;
+    }
+    #text {
+      border-right: 2px solid #0f0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="text"></div>
+
+  <script>
+    const message = "Hello, Warm Welcome to All!";
+    const textEl = document.getElementById("text");
+    let i = 0;
+
+    function type() {
+      if (i < message.length) {
+        textEl.textContent += message.charAt(i);
+        i++;
+        setTimeout(type, 100);
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
